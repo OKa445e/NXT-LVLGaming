@@ -1,0 +1,23 @@
+{
+  "name": "nextlvl-gaming-cafe",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0"
+  },
+  "dependencies": {
+    "@tailwindcss/vite": "latest",
+    "lucide-react": "latest",
+    "motion": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "tailwindcss": "latest"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "latest",
+    "vite": "latest"
+  }
+}
