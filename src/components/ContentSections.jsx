@@ -34,7 +34,7 @@ function BookingForm() {
       <div className="form-heading"><span className="eyebrow">PLAYER REGISTRATION</span><h3>LET'S GET YOU <span>IN THE GAME.</span></h3><p>Send a quick enquiry. We'll continue the conversation on WhatsApp.</p></div>
       <label><span>YOUR NAME</span><input value={name} onChange={(event) => setName(event.target.value)} placeholder="Enter your name" autoComplete="name" /></label>
       <div className="form-row">
-        <label><span>CHOOSE YOUR ZONE</span><select value={game} onChange={(event) => setGame(event.target.value)}><option>PS5 / PS4 Gaming</option><option>PC Gaming</option><option>Racing Simulator</option><option>Multiplayer Gaming</option><option>Snacks & Drinks</option></select></label>
+        <label><span>CHOOSE YOUR ZONE</span><select value={game} onChange={(event) => setGame(event.target.value)}><option>PS5 Gaming</option><option>PS4 Gaming</option><option>Racing Simulator</option><option>Multiplayer Gaming</option></select></label>
         <label><span>PLAYERS</span><select value={guests} onChange={(event) => setGuests(event.target.value)}>{['1', '2', '3', '4', '5', '6+'].map((value) => <option key={value}>{value}</option>)}</select></label>
       </div>
       <label><span>PREFERRED DATE <small>(OPTIONAL)</small></span><input type="date" value={date} onChange={(event) => setDate(event.target.value)} min={new Date().toISOString().split('T')[0]} /></label>
