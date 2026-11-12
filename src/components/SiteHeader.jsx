@@ -7,6 +7,19 @@ export default function SiteHeader() {
   const [menuOpen, setMenuOpen] = useState(false)
   const closeMenu = () => setMenuOpen(false)
 
+  function navigateToSection(event, href) {
+    const section = document.getElementById(href.slice(1))
+    if (!section) {
+      closeMenu()
+      return
+    }
+
+    event.preventDefault()
+    closeMenu()
+    window.history.pushState(null, '', href)
+    section.scrollIntoView({ behavior: 'instant', block: 'start' })
+  }
+
   return (
     <>
       <header className="site-header">
@@ -27,7 +40,7 @@ export default function SiteHeader() {
       <AnimatePresence>
         {menuOpen && (
           <motion.nav className="mobile-nav" initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} transition={{ duration: 0.25 }}>
-            {navItems.map(([label, href]) => <a key={href} href={href} onClick={closeMenu}>{label}<ChevronRight size={16} /></a>)}
+            {navItems.map(([label, href]) => <a key={href} href={href} onClick={(event) => navigateToSection(event, href)}>{label}<ChevronRight size={16} /></a>)}
             <a className="mobile-nav-cta" href={whatsappLink()} target="_blank" rel="noreferrer" onClick={closeMenu}>BOOK A SLOT <ArrowUpRight size={15} /></a>
           </motion.nav>
         )}
